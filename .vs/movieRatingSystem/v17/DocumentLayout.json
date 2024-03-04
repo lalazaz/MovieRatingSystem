@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "D:\\Code\\winfrom\\movieRatingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\movieratingsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\movieratingsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\common\\mysqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\common\\mysqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\common\\mysqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\common\\mysqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,24 +50,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "movieRatingSystem",
+              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\movieRatingSystem.csproj",
+              "RelativeDocumentMoniker": "movieRatingSystem\\movieRatingSystem.csproj",
+              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\movieRatingSystem.csproj",
+              "RelativeToolTip": "movieRatingSystem\\movieRatingSystem.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-04T08:53:05.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "RegisterForm.cs",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\RegisterForm.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\UI\\RegisterForm.cs",
               "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\RegisterForm.cs",
               "RelativeToolTip": "movieRatingSystem\\UI\\RegisterForm.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAADwvxIAAAAAAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAADwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-04T02:30:23.604Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RegisterForm.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\RegisterForm.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\UI\\RegisterForm.cs",
@@ -75,58 +92,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "test.cs",
-              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\test.cs",
-              "RelativeDocumentMoniker": "movieRatingSystem\\UI\\test.cs",
-              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\test.cs",
-              "RelativeToolTip": "movieRatingSystem\\UI\\test.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAUwBkAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T02:23:06.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MySqlHelper.cs",
-              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\Common\\MySqlHelper.cs",
-              "RelativeDocumentMoniker": "movieRatingSystem\\Common\\MySqlHelper.cs",
-              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\Common\\MySqlHelper.cs",
-              "RelativeToolTip": "movieRatingSystem\\Common\\MySqlHelper.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAAC0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T02:21:24.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "LoginForm.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\UI\\LoginForm.cs",
               "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "movieRatingSystem\\UI\\LoginForm.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T02:18:20.579Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2024-03-04T02:18:20.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\UI\\LoginForm.cs",
               "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.cs",
               "RelativeToolTip": "movieRatingSystem\\UI\\LoginForm.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAiwA0AAAAFAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAA9wDwAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T02:16:50.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-04T02:16:50.526Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "movieRatingSystem\\UI\\LoginForm.Designer.cs",
+              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.Designer.cs",
+              "RelativeToolTip": "movieRatingSystem\\UI\\LoginForm.Designer.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAADwv2cAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T02:17:13.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\Program.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\Program.cs",
@@ -139,28 +140,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
+              "Title": "MySqlHelper.cs",
+              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\Common\\MySqlHelper.cs",
+              "RelativeDocumentMoniker": "movieRatingSystem\\Common\\MySqlHelper.cs",
+              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\Common\\MySqlHelper.cs",
+              "RelativeToolTip": "movieRatingSystem\\Common\\MySqlHelper.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAC0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T02:21:24.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "test.cs",
+              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\test.cs",
+              "RelativeDocumentMoniker": "movieRatingSystem\\UI\\test.cs",
+              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\test.cs",
+              "RelativeToolTip": "movieRatingSystem\\UI\\test.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAUwBkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T02:23:06.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "test.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\test.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\UI\\test.cs",
               "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\test.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "movieRatingSystem\\UI\\test.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T15:10:11.646Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginForm.Designer.cs",
-              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.Designer.cs",
-              "RelativeDocumentMoniker": "movieRatingSystem\\UI\\LoginForm.Designer.cs",
-              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\LoginForm.Designer.cs",
-              "RelativeToolTip": "movieRatingSystem\\UI\\LoginForm.Designer.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAADwv1sAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T02:17:13.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T15:10:11.646Z"
             }
           ]
         }
