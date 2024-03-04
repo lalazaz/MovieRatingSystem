@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using movieRatingSystem.Bll;
 
 namespace movieRatingSystem.UI
 {
     public partial class MainForm : Form
     {
+        private MovieBll movieBll;
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,8 +23,14 @@ namespace movieRatingSystem.UI
 
         private void Initial()
         {
-           // MessageBox.Show("主页面初始化成功！");
-           
+            movieBll = new MovieBll();
+            //MessageBox.Show("主页面初始化成功！");
+            MovieNameListBox.Name = "done";
+            List<string> allMovieName = movieBll.GetAllMovieName();
+            foreach (string s in allMovieName)
+            {
+                MessageBox.Show(s);
+            }
         }
     }
 }

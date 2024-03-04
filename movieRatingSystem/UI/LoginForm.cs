@@ -48,7 +48,7 @@ namespace movieRatingSystem
             string inputPassword = PasswordTextBox.Text;
             if (userBll.ValidateUserLogin(inputName, inputPassword))
             {
-                //                MessageBox.Show("登录成功！");
+                //               MessageBox.Show("登录成功！");
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
                 this.Hide();

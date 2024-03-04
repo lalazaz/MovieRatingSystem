@@ -7,11 +7,9 @@ namespace movieRatingSystem.Dal;
 
 public class UserDal
 {
-    private bool CheckPassword(string inputPassword, string passwordHashFromDatabase)
-    {
-        return PassWordHelper.GetPasswordHash(inputPassword).Equals(passwordHashFromDatabase);
-    }
-
+    /**
+     * 判断用户登录信息是否合法
+     */
     public bool ValidateUserLogin(string username, string password)
     {
         string searchPasswordByName = "select PasswordHash from Users where Username = @Username";
@@ -76,4 +74,8 @@ public class UserDal
 
         return rowsAffected > 0;
     }
+    private bool CheckPassword(string inputPassword, string passwordHashFromDatabase)
+         {
+             return PassWordHelper.GetPasswordHash(inputPassword).Equals(passwordHashFromDatabase);
+         }
 }
