@@ -31,3 +31,4 @@ D:\Code\winfrom\movieRatingSystem\movieRatingSystem\obj\Debug\net8.0-windows\mov
 D:\Code\winfrom\movieRatingSystem\movieRatingSystem\obj\Debug\net8.0-windows\movieRatingSystem.LoginForm.resources
 D:\Code\winfrom\movieRatingSystem\movieRatingSystem\obj\Debug\net8.0-windows\movieRatingSystem.UI.RegisterForm.resources
 D:\Code\winfrom\movieRatingSystem\movieRatingSystem\obj\Debug\net8.0-windows\movieRatingSystem.test.resources
+D:\Code\winfrom\movieRatingSystem\movieRatingSystem\obj\Debug\net8.0-windows\movieRatingSystem.sourcelink.json

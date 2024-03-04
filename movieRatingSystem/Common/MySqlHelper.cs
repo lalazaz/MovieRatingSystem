@@ -11,21 +11,20 @@ namespace movieRatingSystem.Common
     public static class MySqlHelper
     {
         //写死连接本地数据库
-        private const string ConnectionString =
-            "server=localhost;user id=root;password=123456;database=movie_rating_system";
+        private const string ConnectionString = "server=localhost;user id=root;password=123456;database=movie_rating_system";
 
         public static DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
         {
-            using (MySqlConnection connection = new MySqlConnection())
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
             {
-                using (MySqlCommand command = new MySqlCommand())
+                using (MySqlCommand command = new MySqlCommand(query,connection))
                 {
                     command.Parameters.AddRange(parameters);
                     connection.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                     {
                         DataTable dataTable = new DataTable();
+                        adapter.SelectCommand = command;
                         adapter.Fill(dataTable);
                         return dataTable;
                     }

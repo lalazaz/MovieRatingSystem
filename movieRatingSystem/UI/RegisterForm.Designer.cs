@@ -34,6 +34,9 @@
             PasswordLabel = new Label();
             EmaiLabel = new Label();
             EmailTextBox = new TextBox();
+            label1 = new Label();
+            confrimPasswordTextBox = new TextBox();
+            RegisterButton = new Button();
             SuspendLayout();
             // 
             // NameTextBox
@@ -71,7 +74,7 @@
             // EmaiLabel
             // 
             EmaiLabel.AutoSize = true;
-            EmaiLabel.Location = new Point(244, 232);
+            EmaiLabel.Location = new Point(244, 299);
             EmaiLabel.Name = "EmaiLabel";
             EmaiLabel.Size = new Size(47, 20);
             EmaiLabel.TabIndex = 4;
@@ -79,16 +82,46 @@
             // 
             // EmailTextBox
             // 
-            EmailTextBox.Location = new Point(337, 229);
+            EmailTextBox.Location = new Point(337, 296);
             EmailTextBox.Name = "EmailTextBox";
             EmailTextBox.Size = new Size(117, 27);
             EmailTextBox.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(181, 241);
+            label1.Name = "label1";
+            label1.Size = new Size(142, 20);
+            label1.TabIndex = 7;
+            label1.Text = "confirm_password";
+            label1.Click += label1_Click;
+            // 
+            // confrimPasswordTextBox
+            // 
+            confrimPasswordTextBox.Location = new Point(337, 238);
+            confrimPasswordTextBox.Name = "confrimPasswordTextBox";
+            confrimPasswordTextBox.Size = new Size(117, 27);
+            confrimPasswordTextBox.TabIndex = 6;
+            // 
+            // RegisterButton
+            // 
+            RegisterButton.Location = new Point(337, 359);
+            RegisterButton.Name = "RegisterButton";
+            RegisterButton.Size = new Size(94, 29);
+            RegisterButton.TabIndex = 8;
+            RegisterButton.Text = "注册";
+            RegisterButton.UseVisualStyleBackColor = true;
+            RegisterButton.Click += RegisterButton_Click;
             // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(RegisterButton);
+            Controls.Add(label1);
+            Controls.Add(confrimPasswordTextBox);
             Controls.Add(EmailTextBox);
             Controls.Add(EmaiLabel);
             Controls.Add(PasswordLabel);
@@ -109,5 +142,8 @@
         private Label PasswordLabel;
         private Label EmaiLabel;
         private TextBox EmailTextBox;
+        private Label label1;
+        private TextBox confrimPasswordTextBox;
+        private Button RegisterButton;
     }
 }

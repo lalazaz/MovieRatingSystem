@@ -33,6 +33,7 @@
             PasswordTextBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            RegisterButton = new Button();
             SuspendLayout();
             // 
             // LoginButton
@@ -77,11 +78,22 @@
             label2.TabIndex = 4;
             label2.Text = "password";
             // 
+            // RegisterButton
+            // 
+            RegisterButton.Location = new Point(470, 265);
+            RegisterButton.Name = "RegisterButton";
+            RegisterButton.Size = new Size(94, 29);
+            RegisterButton.TabIndex = 5;
+            RegisterButton.Text = "注册";
+            RegisterButton.UseVisualStyleBackColor = true;
+            RegisterButton.Click += RegisterButton_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(RegisterButton);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(PasswordTextBox);
@@ -101,5 +113,6 @@
         private TextBox PasswordTextBox;
         private Label label1;
         private Label label2;
+        private Button RegisterButton;
     }
 }
