@@ -2,7 +2,7 @@
 
 namespace movieRatingSystem.UI;
 
-partial class AboutMe
+partial class AboutMeForm
 {
     /// <summary>
     /// Required designer variable.
@@ -95,7 +95,7 @@ partial class AboutMe
         Controls.Add(label2);
         Controls.Add(RateMovieDataGridView);
         Controls.Add(label1);
-        Name = "AboutMe";
+        Name = "AboutMeForm";
         Text = "AboutMe";
         ((ISupportInitialize)RateMovieDataGridView).EndInit();
         ResumeLayout(false);

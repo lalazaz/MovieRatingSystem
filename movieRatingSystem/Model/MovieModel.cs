@@ -1,4 +1,8 @@
-﻿namespace movieRatingSystem.Model;
+﻿using System.ComponentModel;
+using System.Drawing.Design;
+using movieRatingSystem.Common;
+
+namespace movieRatingSystem.Model;
 
 public class MovieModel
 {
@@ -7,6 +11,8 @@ public class MovieModel
     public string Genre { get; set; }
     public int ReleaseYear { get; set; }
     public string Director { get; set; }
+
+    [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
     public string Description { get; set; }
 
     public override string ToString()

@@ -21,7 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="UI\AboutMe.cs">
+    <Compile Update="UI\AboutMeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MovieDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

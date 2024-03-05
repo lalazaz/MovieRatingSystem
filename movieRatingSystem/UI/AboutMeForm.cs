@@ -4,11 +4,11 @@ using movieRatingSystem.Model;
 
 namespace movieRatingSystem.UI;
 
-public partial class AboutMe : Form
+public partial class AboutMeForm : Form
 {
     private UserBll userBll;
 
-    public AboutMe()
+    public AboutMeForm()
     {
         userBll = new UserBll();
         InitializeComponent();

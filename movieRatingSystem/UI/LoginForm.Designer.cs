@@ -34,6 +34,7 @@
             label1 = new Label();
             label2 = new Label();
             RegisterButton = new Button();
+            exitButton = new Button();
             SuspendLayout();
             // 
             // LoginButton
@@ -88,11 +89,22 @@
             RegisterButton.UseVisualStyleBackColor = true;
             RegisterButton.Click += RegisterButton_Click;
             // 
+            // exitButton
+            // 
+            exitButton.Location = new Point(672, 371);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(94, 29);
+            exitButton.TabIndex = 6;
+            exitButton.Text = "退出";
+            exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(exitButton);
             Controls.Add(RegisterButton);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -114,5 +126,6 @@
         private Label label1;
         private Label label2;
         private Button RegisterButton;
+        private Button exitButton;
     }
 }

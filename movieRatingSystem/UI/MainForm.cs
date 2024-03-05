@@ -46,7 +46,7 @@ namespace movieRatingSystem.UI
 
         private void MovieNameListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(sender + "," + e.ToString);
+            //MessageBox.Show(sender + "," + e.ToString);
             // 获取选中的电影名字
             object? selectedItem = MovieNameListBox.SelectedItem;
             string selectedMovieName = "";
@@ -58,7 +58,13 @@ namespace movieRatingSystem.UI
             if (!selectedMovieName.Equals(""))
             {
                 //MessageBox.Show($"you selected:{selectedMovieName}");
-                MessageBox.Show(movieBll.GetMovieInfoByName(selectedMovieName).ToString());
+                //MessageBox.Show(movieBll.GetMovieInfoByName(selectedMovieName).ToString());
+                //进入电影详情页面
+                GlobalData.MovieModel = movieBll.GetMovieInfoByName(selectedMovieName);
+                
+                MovieDetailForm movieDetailForm = new MovieDetailForm();
+                movieDetailForm.StartPosition = FormStartPosition.CenterScreen;
+                movieDetailForm.ShowDialog();
             }
         }
 
@@ -73,7 +79,7 @@ namespace movieRatingSystem.UI
         private void aboutMeButton_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("进入我的主页");
-            AboutMe aboutMe = new AboutMe();
+            AboutMeForm aboutMe = new AboutMeForm();
             aboutMe.Show();
             // this.Close();
         }

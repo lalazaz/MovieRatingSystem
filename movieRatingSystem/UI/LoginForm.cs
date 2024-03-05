@@ -65,5 +65,13 @@ namespace movieRatingSystem
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            foreach (Form? openForm in Application.OpenForms)
+            {
+                openForm.Close();
+            }
+        }
     }
 }
