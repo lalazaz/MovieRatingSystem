@@ -1,12 +1,85 @@
 ﻿using System.Data;
 using movieRatingSystem.Common;
+using movieRatingSystem.Model;
 using MySql.Data.MySqlClient;
 using MySqlHelper = movieRatingSystem.Common.MySqlHelper;
 
 namespace movieRatingSystem.Dal;
 
+// Dal层的逻辑可以移到Bll层去，返回对方使用model包装
 public class UserDal
 {
+    /**
+     * 根据userid拿到用户信息
+     */
+    public UserModel GetUserInfoByUserid(int userid)
+    {
+        UserModel userInfo = null;
+
+        string query = "SELECT * FROM Users WHERE UserId = @userId";
+        MySqlParameter parameter = new MySqlParameter("@userId", MySqlDbType.Int32);
+        parameter.Value = userid;
+
+        DataTable dataTable = MySqlHelper.ExecuteQuery(query, parameter);
+
+        if (dataTable.Rows.Count > 0)
+        {
+            DataRow row = dataTable.Rows[0];
+            // 根据实际的表结构和 UserModel 类来设置用户信息
+            userInfo = new UserModel()
+            {
+                UserID = userid,
+                Username = row["Username"].ToString(),
+                Email = row["Email"].ToString(),
+            };
+        }
+
+        return userInfo;
+    }
+
+    /**
+     * 根据userid拿到这个用户看过的所有电影，需要连表查询
+     * 结果只要电影名字和自己评分的多少
+     * Dictionary就很好
+     */
+    public List<UserMovieRatingModel> GetRatedMovieByUserId(int userId)
+    {
+        List<UserMovieRatingModel> dictionary = new List<UserMovieRatingModel>();
+        string searchMovieNameAndRatingByUserId = "select ratings.Rating, movies.Title " +
+                                                  "from ratings " +
+                                                  "inner join movies on ratings.MovieID = movies.MovieID " +
+                                                  "where ratings.UserID = @userId";
+        MySqlParameter parameter = new MySqlParameter("@userId", MySqlDbType.Int32);
+        parameter.Value = userId;
+        DataTable dataTable = MySqlHelper.ExecuteQuery(searchMovieNameAndRatingByUserId, parameter);
+        for (var i = 0; i < dataTable.Rows.Count; i++)
+        {
+            dictionary.Add(new UserMovieRatingModel(
+                dataTable.Rows[i]["Title"].ToString(),
+                (decimal)dataTable.Rows[i]["Rating"]));
+        }
+
+        return dictionary;
+    }
+
+
+    /**
+     * 根据用户名查找用户id
+     */
+    public int GetUserIdByUserName(string name)
+    {
+        string searchUserIdByUserName = "select UserID from users where Username = @name";
+        MySqlParameter parameter = new MySqlParameter("@name", MySqlDbType.VarChar);
+        parameter.Value = name;
+        DataTable dataTable = MySqlHelper.ExecuteQuery(searchUserIdByUserName, parameter);
+        if (dataTable.Rows.Count > 0)
+        {
+            return (int)dataTable.Rows[0]["UserID"];
+        }
+
+        return -1;
+    }
+
     /**
      * 判断用户登录信息是否合法
      */
@@ -74,8 +147,9 @@ public class UserDal
 
         return rowsAffected > 0;
     }
+
     private bool CheckPassword(string inputPassword, string passwordHashFromDatabase)
-         {
-             return PassWordHelper.GetPasswordHash(inputPassword).Equals(passwordHashFromDatabase);
-         }
+    {
+        return PassWordHelper.GetPasswordHash(inputPassword).Equals(passwordHashFromDatabase);
+    }
 }

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.Logging;
 using movieRatingSystem.Bll;
+using movieRatingSystem.Common;
 
 namespace movieRatingSystem.UI
 {
@@ -43,8 +46,14 @@ namespace movieRatingSystem.UI
 
         private void MovieNameListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            MessageBox.Show(sender + "," + e.ToString);
             // 获取选中的电影名字
-            string selectedMovieName = MovieNameListBox.SelectedItem.ToString();
+            object? selectedItem = MovieNameListBox.SelectedItem;
+            string selectedMovieName = "";
+            if (selectedItem != null)
+            {
+                selectedMovieName = selectedItem.ToString();
+            }
 
             if (!selectedMovieName.Equals(""))
             {
@@ -59,6 +68,25 @@ namespace movieRatingSystem.UI
             List<string> movieNamesByKeyword = movieBll.GetMovieNamesByKeyword(searchTextbox.Text);
             MovieNameListBox.Items.Clear();
             MovieNameListBox.Items.AddRange(movieNamesByKeyword.ToArray());
+        }
+
+        private void aboutMeButton_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("进入我的主页");
+            AboutMe aboutMe = new AboutMe();
+            aboutMe.Show();
+            // this.Close();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("再见！");
+            GlobalData.UserId = -1;
+
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.StartPosition = FormStartPosition.CenterScreen;
+            loginForm.Show();
         }
     }
 }

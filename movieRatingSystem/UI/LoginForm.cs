@@ -49,6 +49,7 @@ namespace movieRatingSystem
             if (userBll.ValidateUserLogin(inputName, inputPassword))
             {
                 //               MessageBox.Show("登录成功！");
+                GlobalData.UserId = userBll.GetUserIdByUserName(inputName);
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
                 this.Hide();

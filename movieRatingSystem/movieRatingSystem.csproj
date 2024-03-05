@@ -16,4 +16,14 @@
     <Content Include="obj\Debug\net8.0-windows\movieRatingSystem.sourcelink.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="UI\AboutMe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
