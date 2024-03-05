@@ -19,6 +19,16 @@ namespace movieRatingSystem.UI
         {
             InitializeComponent();
             Initial();
+            this.KeyPreview = true;
+            this.KeyDown += MainForm_entry_down;
+        }
+
+        private void MainForm_entry_down(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchMovieByName_Click(sender, e);
+            }
         }
 
         private void Initial()
@@ -27,10 +37,28 @@ namespace movieRatingSystem.UI
             //MessageBox.Show("主页面初始化成功！");
             MovieNameListBox.Name = "done";
             List<string> allMovieName = movieBll.GetAllMovieName();
-            foreach (string s in allMovieName)
+            MovieNameListBox.Items.AddRange(allMovieName.ToArray());
+            MovieNameListBox.Name = allMovieName.Count.ToString();
+        }
+
+        private void MovieNameListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // 获取选中的电影名字
+            string selectedMovieName = MovieNameListBox.SelectedItem.ToString();
+
+            if (!selectedMovieName.Equals(""))
             {
-                MessageBox.Show(s);
+                //MessageBox.Show($"you selected:{selectedMovieName}");
+                MessageBox.Show(movieBll.GetMovieInfoByName(selectedMovieName).ToString());
             }
+        }
+
+        private void SearchMovieByName_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(searchTextbox.Text);
+            List<string> movieNamesByKeyword = movieBll.GetMovieNamesByKeyword(searchTextbox.Text);
+            MovieNameListBox.Items.Clear();
+            MovieNameListBox.Items.AddRange(movieNamesByKeyword.ToArray());
         }
     }
 }

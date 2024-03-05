@@ -9,6 +9,12 @@ public class MovieModel
     public string Director { get; set; }
     public string Description { get; set; }
 
+    public override string ToString()
+    {
+        return
+            $" Title: {Title}, \n Genre: {Genre}, \n ReleaseYear: {ReleaseYear},\n Director: {Director}, \n Description: {Description}";
+    }
+
     public MovieModel()
     {
     }
