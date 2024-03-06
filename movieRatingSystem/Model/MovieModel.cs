@@ -25,8 +25,9 @@ public class MovieModel
     {
     }
 
-    public MovieModel(string title, string genre, int releaseYear, string director, string description)
+    public MovieModel(int movieId, string title, string genre, int releaseYear, string director, string description)
     {
+        MovieID = movieId;
         Title = title;
         Genre = genre;
         ReleaseYear = releaseYear;

@@ -12,11 +12,11 @@ public class MovieDal
     {
         List<string> res = new List<string>();
         string selectMoviesByKeyword = "select * from movies where LOWER(Title) like LOWER(@keyword)";
-        MySqlParameter parameter = new MySqlParameter("@keyword",MySqlDbType.VarChar);
+        MySqlParameter parameter = new MySqlParameter("@keyword", MySqlDbType.VarChar);
         // 添加通配符以实现模糊匹配
         parameter.Value = $"%{keyword}%";
-        
-        DataTable dataTable = MyMySqlHelper.ExecuteQuery(selectMoviesByKeyword,parameter);
+
+        DataTable dataTable = MyMySqlHelper.ExecuteQuery(selectMoviesByKeyword, parameter);
         foreach (DataRow dataTableRow in dataTable.Rows)
         {
             res.Add(dataTableRow["Title"].ToString());
@@ -41,6 +41,7 @@ public class MovieDal
         if (dataTable.Rows.Count > 0)
         {
             movieModel = new MovieModel(
+                (int)dataTable.Rows[0]["MovieID"],
                 dataTable.Rows[0]["Title"].ToString(),
                 dataTable.Rows[0]["Genre"].ToString(),
                 (int)dataTable.Rows[0]["ReleaseYear"],
@@ -75,6 +76,7 @@ public class MovieDal
         for (var i = 0; i < result.Rows.Count; i++)
         {
             res.Add(new MovieModel(
+                (int)result.Rows[i]["MovieID"],
                 result.Rows[i]["Title"].ToString(),
                 result.Rows[i]["Genre"].ToString(),
                 (int)result.Rows[i]["ReleaseYear"],

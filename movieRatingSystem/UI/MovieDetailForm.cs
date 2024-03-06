@@ -1,10 +1,15 @@
 ﻿using System.Text.RegularExpressions;
+using movieRatingSystem.Bll;
 using movieRatingSystem.Common;
+using movieRatingSystem.Dal;
+using movieRatingSystem.Model;
 
 namespace movieRatingSystem.UI;
 
 public partial class MovieDetailForm : Form
 {
+    private RatingBll ratingBll = new();
+
     public MovieDetailForm()
     {
         InitializeComponent();
@@ -30,7 +35,7 @@ public partial class MovieDetailForm : Form
     // 逻辑是0-10，只能是整数，其他格式不算
     private void rateButton_Click(object sender, EventArgs e)
     {
-        string rate = RateTextBox.Text.ToString();
+        string rate = RateTextBox.Text;
         //MessageBox.Show(rate);
         //输入判断
         /*string pattern = @"^[0-9]|10$";
@@ -39,14 +44,37 @@ public partial class MovieDetailForm : Form
         {
             MessageBox.Show("评分输入不合法，请输入0-10的整数。");
         }*/
-        if (!(rate.Equals("0") || rate.Equals("1") || rate.Equals("2") || rate.Equals("3") || rate.Equals("4") ||
-              rate.Equals("5") || rate.Equals("6") || rate.Equals("7") || rate.Equals("8") || rate.Equals("9") ||
-              rate.Equals("10")))
+        if (!int.TryParse(rate, out int numericRate) || numericRate < 0 || numericRate > 10)
         {
             MessageBox.Show("评分输入不合法，请输入0-10的整数。");
             return;
-        } 
+        }
+
         // 评分插入到数据库，且用户不能已经评分过该电影
-        
+        decimal ratingByUserId = ratingBll.RatingByUserID(GlobalData.UserId, GlobalData.MovieModel.MovieID);
+        if (ratingByUserId != -1)
+        {
+            MessageBox.Show($"您已经评分过改电影，您的评分为：{ratingByUserId},请前往你的主页查看");
+            return;
+        }
+
+        RatingModel ratingModel = new RatingModel();
+        // 拿出属性
+        if (GlobalData.MovieModel != null)
+        {
+            ratingModel.MovieID = GlobalData.MovieModel.MovieID;
+        }
+
+        ratingModel.UserID = GlobalData.UserId;
+        ratingModel.Rating = Convert.ToDecimal(rate);
+        int insertRating = ratingBll.insertRating(ratingModel);
+        if (insertRating == 1)
+        {
+            MessageBox.Show("评分成功！");
+        }
+        else
+        {
+            MessageBox.Show("评分失败，请稍后再试");
+        }
     }
 }
