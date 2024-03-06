@@ -1,7 +1,7 @@
 ﻿using System.Data;
+using movieRatingSystem.Common;
 using movieRatingSystem.Model;
 using MySql.Data.MySqlClient;
-using MySqlHelper = movieRatingSystem.Common.MySqlHelper;
 
 namespace movieRatingSystem.Dal;
 
@@ -16,7 +16,7 @@ public class MovieDal
         // 添加通配符以实现模糊匹配
         parameter.Value = $"%{keyword}%";
         
-        DataTable dataTable = MySqlHelper.ExecuteQuery(selectMoviesByKeyword,parameter);
+        DataTable dataTable = MyMySqlHelper.ExecuteQuery(selectMoviesByKeyword,parameter);
         foreach (DataRow dataTableRow in dataTable.Rows)
         {
             res.Add(dataTableRow["Title"].ToString());
@@ -36,7 +36,7 @@ public class MovieDal
         MySqlParameter parameter = new MySqlParameter("@Title", MySqlDbType.VarChar);
         parameter.Value = movieName;
         // 3.放入参数执行sql
-        DataTable dataTable = MySqlHelper.ExecuteQuery(selectInfoByName, parameter);
+        DataTable dataTable = MyMySqlHelper.ExecuteQuery(selectInfoByName, parameter);
         // 4.处理结果
         if (dataTable.Rows.Count > 0)
         {
@@ -69,7 +69,7 @@ public class MovieDal
     {
         string searchMovies = "select * from movies";
         MySqlParameter parameter = new MySqlParameter();
-        DataTable result = MySqlHelper.ExecuteQuery(searchMovies, parameter);
+        DataTable result = MyMySqlHelper.ExecuteQuery(searchMovies, parameter);
         List<MovieModel> res = new List<MovieModel>();
 
         for (var i = 0; i < result.Rows.Count; i++)

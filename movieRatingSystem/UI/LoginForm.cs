@@ -12,7 +12,6 @@ using movieRatingSystem.Bll;
 using movieRatingSystem.Common;
 using movieRatingSystem.UI;
 using MySql.Data.MySqlClient;
-using MySqlHelper = movieRatingSystem.Common.MySqlHelper;
 
 namespace movieRatingSystem
 {

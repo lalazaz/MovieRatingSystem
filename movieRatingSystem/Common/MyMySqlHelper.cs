@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace movieRatingSystem.Common
 {
-    public static class MySqlHelper
+    public static class MyMySqlHelper
     {
         //写死连接本地数据库
         private const string ConnectionString = "server=localhost;user id=root;password=123456;database=movie_rating_system";

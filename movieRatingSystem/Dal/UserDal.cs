@@ -2,7 +2,6 @@
 using movieRatingSystem.Common;
 using movieRatingSystem.Model;
 using MySql.Data.MySqlClient;
-using MySqlHelper = movieRatingSystem.Common.MySqlHelper;
 
 namespace movieRatingSystem.Dal;
 
@@ -20,7 +19,7 @@ public class UserDal
         MySqlParameter parameter = new MySqlParameter("@userId", MySqlDbType.Int32);
         parameter.Value = userid;
 
-        DataTable dataTable = MySqlHelper.ExecuteQuery(query, parameter);
+        DataTable dataTable = MyMySqlHelper.ExecuteQuery(query, parameter);
 
         if (dataTable.Rows.Count > 0)
         {
@@ -51,7 +50,7 @@ public class UserDal
                                                   "where ratings.UserID = @userId";
         MySqlParameter parameter = new MySqlParameter("@userId", MySqlDbType.Int32);
         parameter.Value = userId;
-        DataTable dataTable = MySqlHelper.ExecuteQuery(searchMovieNameAndRatingByUserId, parameter);
+        DataTable dataTable = MyMySqlHelper.ExecuteQuery(searchMovieNameAndRatingByUserId, parameter);
         for (var i = 0; i < dataTable.Rows.Count; i++)
         {
             dictionary.Add(new UserMovieRatingModel(
@@ -71,7 +70,7 @@ public class UserDal
         string searchUserIdByUserName = "select UserID from users where Username = @name";
         MySqlParameter parameter = new MySqlParameter("@name", MySqlDbType.VarChar);
         parameter.Value = name;
-        DataTable dataTable = MySqlHelper.ExecuteQuery(searchUserIdByUserName, parameter);
+        DataTable dataTable = MyMySqlHelper.ExecuteQuery(searchUserIdByUserName, parameter);
         if (dataTable.Rows.Count > 0)
         {
             return (int)dataTable.Rows[0]["UserID"];
@@ -90,7 +89,7 @@ public class UserDal
         MySqlParameter parameter = new MySqlParameter("@Username", MySqlDbType.VarChar);
         parameter.Value = username;
 
-        DataTable result = MySqlHelper.ExecuteQuery(searchPasswordByName, parameter);
+        DataTable result = MyMySqlHelper.ExecuteQuery(searchPasswordByName, parameter);
         if (result.Rows.Count > 0)
         {
             string passwordHash = result.Rows[0]["PasswordHash"].ToString();
@@ -127,7 +126,7 @@ public class UserDal
         string searchByName = "select * from Users where Username = @Username";
         MySqlParameter parameter = new MySqlParameter("@Username", MySqlDbType.VarChar);
         parameter.Value = username;
-        DataTable dataTable = MySqlHelper.ExecuteQuery(searchByName, parameter);
+        DataTable dataTable = MyMySqlHelper.ExecuteQuery(searchByName, parameter);
         if (dataTable.Rows.Count > 0)
         {
             MessageBox.Show("用户名已经存在！");
@@ -143,7 +142,7 @@ public class UserDal
                 { Value = PassWordHelper.GetPasswordHash(password) },
             new MySqlParameter("@Email", MySqlDbType.VarChar) { Value = email }
         };
-        int rowsAffected = MySqlHelper.ExecuteNonQuery(insertUser, insertParameters);
+        int rowsAffected = MyMySqlHelper.ExecuteNonQuery(insertUser, insertParameters);
 
         return rowsAffected > 0;
     }
