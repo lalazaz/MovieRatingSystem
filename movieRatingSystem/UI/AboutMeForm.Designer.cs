@@ -57,6 +57,7 @@ partial class AboutMeForm
         RateMovieDataGridView.Size = new Size(377, 268);
         RateMovieDataGridView.TabIndex = 1;
         RateMovieDataGridView.CellContentClick += RateMovieDataGridView_CellContentClick;
+        RateMovieDataGridView.CellValueChanged += RateMovieDataGridView_CellValueChanged;
         // 
         // label2
         // 
@@ -85,7 +86,7 @@ partial class AboutMeForm
         returnPre.UseVisualStyleBackColor = true;
         returnPre.Click += returnPre_Click;
         // 
-        // AboutMe
+        // AboutMeForm
         // 
         AutoScaleDimensions = new SizeF(9F, 20F);
         AutoScaleMode = AutoScaleMode.Font;

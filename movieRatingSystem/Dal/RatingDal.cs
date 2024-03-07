@@ -7,6 +7,23 @@ namespace movieRatingSystem.Dal;
 
 public class RatingDal
 {
+    // 根据电影名字和用户id更改电影评分
+    public int changeRatingByMovieNameAndUserID(MovieNameAndUserID movieNameAndUserId, decimal rating)
+    {
+        string updateSql = "update ratings R " +
+                           "inner join movies M " +
+                           "on R.MovieID = M.MovieID " +
+                           "set R.Rating = @Rating where M.Title = @MovingName and R.UserID = @UserID";
+        MySqlParameter[] parameters = new MySqlParameter[]
+        {
+            new MySqlParameter("@Rating", MySqlDbType.Decimal) { Value = rating },
+            new MySqlParameter("@MovingName", MySqlDbType.VarChar) { Value = movieNameAndUserId.Title },
+            new MySqlParameter("@UserID", MySqlDbType.Int32) { Value = movieNameAndUserId.UserID },
+        };
+        return MyMySqlHelper.ExecuteNonQuery(updateSql, parameters);
+    }
+
+
     //根据userid查看用户是否评分过该电影
     public decimal RatingByUserID(int userID, int movieID)
     {
@@ -27,6 +44,7 @@ public class RatingDal
                 }
             }
         }
+
         return res;
     }
 
