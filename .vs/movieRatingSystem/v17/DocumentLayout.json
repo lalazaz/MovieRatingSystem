@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "D:\\Code\\winfrom\\movieRatingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\moviedetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\aboutmeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\aboutmeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\aboutmeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\aboutmeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\moviedetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\moviedetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|d:\\code\\winfrom\\movieratingsystem\\movieratingsystem\\ui\\moviedetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|D:\\Code\\winfrom\\movieRatingSystem\\movieratingsystem\\ui\\moviedetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE3F28AB-6885-4BDE-B67A-493FF04A6B7E}|movieRatingSystem\\movieRatingSystem.csproj|solutionrelative:movieratingsystem\\ui\\moviedetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,11 +26,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AboutMeForm.cs",
+              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\AboutMeForm.cs",
+              "RelativeDocumentMoniker": "movieRatingSystem\\UI\\AboutMeForm.cs",
+              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\AboutMeForm.cs",
+              "RelativeToolTip": "movieRatingSystem\\UI\\AboutMeForm.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAqwDcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T01:54:54.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AboutMeForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\AboutMeForm.cs",
+              "RelativeDocumentMoniker": "movieRatingSystem\\UI\\AboutMeForm.cs",
+              "ToolTip": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\AboutMeForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "movieRatingSystem\\UI\\AboutMeForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T01:54:22.291Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MovieDetailForm.cs",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\MovieDetailForm.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\UI\\MovieDetailForm.cs",
@@ -35,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MovieDetailForm.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\Code\\winfrom\\movieRatingSystem\\movieRatingSystem\\UI\\MovieDetailForm.cs",
               "RelativeDocumentMoniker": "movieRatingSystem\\UI\\MovieDetailForm.cs",

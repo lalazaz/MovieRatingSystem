@@ -58,6 +58,7 @@ partial class AboutMeForm
         RateMovieDataGridView.TabIndex = 1;
         RateMovieDataGridView.CellContentClick += RateMovieDataGridView_CellContentClick;
         RateMovieDataGridView.CellValueChanged += RateMovieDataGridView_CellValueChanged;
+        RateMovieDataGridView.DataError += RateMovieDataGridView_DataError;
         // 
         // label2
         // 

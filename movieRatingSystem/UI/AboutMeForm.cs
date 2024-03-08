@@ -74,8 +74,9 @@ public partial class AboutMeForm : Form
 
             object cellValue = RateMovieDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
             // 处理单元格值更改的逻辑
-            // todo 这里更改评分为字母有异常，以及前面的评分可能也有
-            if (new Regex("[^0-9]").IsMatch(cellValue.ToString()) ||
+            bool isMatch = new Regex("[^0-9]").IsMatch(cellValue.ToString());
+            //MessageBox.Show("匹配的字符串为：" + cellValue.ToString() + isMatch);
+            if (!isMatch ||
                 !int.TryParse(cellValue.ToString(), out int numericRate) || numericRate < 0 || numericRate > 10)
             {
                 MessageBox.Show("评分输入不合法，请输入0-10的整数。");
@@ -99,6 +100,16 @@ public partial class AboutMeForm : Form
             {
                 MessageBox.Show("更新评分失败！");
             }
+        }
+    }
+
+    //  这里更改评分为字母有异常，以及前面的评分可能也有
+    private void RateMovieDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+    {
+        if (e.Exception is FormatException)
+        {
+            MessageBox.Show("评分输入不合法，请输入0-10的整数。");
+            reload();
         }
     }
 
