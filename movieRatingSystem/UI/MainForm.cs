@@ -50,6 +50,10 @@ namespace movieRatingSystem.UI
                 //MessageBox.Show(movieBll.GetMovieInfoByName(selectedMovieName).ToString());
                 //进入电影详情页面
                 GlobalData.MovieModel = movieBll.GetMovieInfoByName(selectedMovieName);
+
+                //注入选择电影的平均评分
+                decimal avgRating = movieBll.GetAvgRatingByMovieName(selectedMovieName);
+                GlobalData.MovieModel.avgRating = avgRating;
                 
                 MovieDetailForm movieDetailForm = new MovieDetailForm();
                 movieDetailForm.StartPosition = FormStartPosition.CenterScreen;

@@ -15,6 +15,9 @@ public class MovieModel
     [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
     public string Description { get; set; }
 
+    //从ratings表中的电影平均评分
+    public decimal avgRating { get; set; }
+
     public override string ToString()
     {
         return

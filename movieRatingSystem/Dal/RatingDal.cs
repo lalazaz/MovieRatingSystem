@@ -7,6 +7,23 @@ namespace movieRatingSystem.Dal;
 
 public class RatingDal
 {
+    //根据电影id拿到他的平均评分
+    public decimal getAvgRatingByMovieID(int movieID)
+    {
+        decimal res = 0;
+        string getAvgRatingSql = "SELECT AVG(Rating) AS AvgRating FROM ratings WHERE MovieID = @MovieID";
+        MySqlParameter parameter = new MySqlParameter("@MovieID", MySqlDbType.Int32);
+        parameter.Value = movieID;
+        DataTable executeQuery = MyMySqlHelper.ExecuteQuery(getAvgRatingSql, parameter);
+        if (executeQuery.Rows.Count > 0)
+        {
+            res = (decimal)executeQuery.Rows[0]["AvgRating"];
+        }
+
+        return res;
+    }
+
+
     // 根据电影名字和用户id更改电影评分
     public int changeRatingByMovieNameAndUserID(MovieNameAndUserID movieNameAndUserId, decimal rating)
     {
