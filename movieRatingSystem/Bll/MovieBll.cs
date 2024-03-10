@@ -14,6 +14,17 @@ public class MovieBll
         ratingDal = new RatingDal();
     }
 
+    public List<MovieModel> GetAllMovie()
+    {
+        List<MovieModel> movieModels = movieDal.GetAllMovie();
+        foreach (MovieModel movieModel in movieModels)
+        {
+            movieModel.AvgRating = GetAvgRatingByMovieName(movieModel.Title);
+        }
+
+        return movieModels;
+    }
+
     public List<string> GetAllMovieName()
     {
         return movieDal.GetAllMovieName();

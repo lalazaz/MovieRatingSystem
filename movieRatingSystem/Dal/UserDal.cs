@@ -8,6 +8,28 @@ namespace movieRatingSystem.Dal;
 // Dal层的逻辑可以移到Bll层去，返回对方使用model包装
 public class UserDal
 {
+    // 获取所有的用户信息
+    public List<UserModel> getAllUser()
+    {
+        string getAllUsersSql = "select * from users";
+        MySqlParameter parameter = new MySqlParameter();
+        DataTable result = MyMySqlHelper.ExecuteQuery(getAllUsersSql, parameter);
+        List<UserModel> res = new List<UserModel>();
+
+        for (var i = 0; i < result.Rows.Count; i++)
+        {
+            res.Add(new UserModel(
+                (int)result.Rows[i]["UserID"],
+                result.Rows[i]["PasswordHash"].ToString(),
+                result.Rows[i]["Username"].ToString(),
+                result.Rows[i]["Email"].ToString(),
+                result.Rows[i]["RegistrationDate"].ToString()
+            ));
+        }
+
+        return res;
+    }
+
     /**
      * 根据userid拿到用户信息
      */
@@ -150,5 +172,22 @@ public class UserDal
     private bool CheckPassword(string inputPassword, string passwordHashFromDatabase)
     {
         return PassWordHelper.GetPasswordHash(inputPassword).Equals(passwordHashFromDatabase);
+    }
+
+    public int updatedUserByUserID(int userId, UserModel updatedUserModel)
+    {
+        string updateSql = "update users SET " +
+                           "Username = @Username, " +
+                           "Email = @Email, " +
+                           "Status = @Status " +
+                           "where UserID = @userId";
+        MySqlParameter[] updateParameters =
+        {
+            new MySqlParameter("Username", MySqlDbType.VarChar) { Value = updatedUserModel.Username },
+            new MySqlParameter("Email", MySqlDbType.VarChar) { Value = updatedUserModel.Email },
+            new MySqlParameter("Status", MySqlDbType.VarChar) { Value = updatedUserModel.Status },
+            new MySqlParameter("UserID", MySqlDbType.Int32) { Value = userId },
+        };
+        return MyMySqlHelper.ExecuteNonQuery(updateSql, updateParameters);
     }
 }

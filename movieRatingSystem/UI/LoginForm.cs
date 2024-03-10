@@ -23,8 +23,9 @@ namespace movieRatingSystem
         {
             userBll = new UserBll();
             InitializeComponent();
-            this.KeyPreview = true;
-            this.KeyDown += LoginForm_enter_down;
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
+            KeyDown += LoginForm_enter_down;
         }
 
         // 给键盘的回车键绑定为登录button
@@ -49,9 +50,20 @@ namespace movieRatingSystem
             {
                 //               MessageBox.Show("登录成功！");
                 GlobalData.UserId = userBll.GetUserIdByUserName(inputName);
-                MainForm mainForm = new MainForm();
-                mainForm.Show();
-                this.Hide();
+                // 管理员登录和普通用户登录
+                if ("admin".Equals(inputName))
+                {
+                    AdminForm adminForm = new AdminForm();
+                    adminForm.Size = new Size(1500, 800);
+                    adminForm.ShowDialog();
+                    Close();
+                }
+                else
+                {
+                    MainForm mainForm = new MainForm();
+                    mainForm.ShowDialog();
+                    Close();
+                }
             }
             else
             {

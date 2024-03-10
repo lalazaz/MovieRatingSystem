@@ -7,6 +7,11 @@ public class UserBll
 {
     private UserDal userDal = new();
 
+    public List<UserModel> GetAllUserInfo()
+    {
+        return userDal.getAllUser();
+    }
+
     public UserModel GetUserInfoByUserid(int userid)
     {
         return userDal.GetUserInfoByUserid(userid);
@@ -32,5 +37,10 @@ public class UserBll
     public int GetUserIdByUserName(string name)
     {
         return userDal.GetUserIdByUserName(name);
+    }
+
+    public int updatedUserByUserID(int userId, UserModel updatedUserModel)
+    {
+        return userDal.updatedUserByUserID(userId, updatedUserModel);
     }
 }

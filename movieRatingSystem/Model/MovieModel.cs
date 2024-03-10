@@ -16,7 +16,7 @@ public class MovieModel
     public string Description { get; set; }
 
     //从ratings表中的电影平均评分
-    public decimal avgRating { get; set; }
+    public decimal AvgRating { get; set; }
 
     public override string ToString()
     {
