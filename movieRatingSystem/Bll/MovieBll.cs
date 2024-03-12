@@ -49,4 +49,9 @@ public class MovieBll
         decimal avgRatingByMovieId = ratingDal.getAvgRatingByMovieID(movieModelMovieId);
         return avgRatingByMovieId;
     }
+
+    public int updatedMovieByMovieID(int movieId, MovieModel updateMovieModel)
+    {
+        return movieDal.updatedUserByUserID(movieId, updateMovieModel);
+    }
 }

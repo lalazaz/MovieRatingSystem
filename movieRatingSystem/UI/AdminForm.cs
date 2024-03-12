@@ -1,4 +1,6 @@
-﻿using movieRatingSystem.Bll;
+﻿using Microsoft.VisualBasic.Logging;
+using movieRatingSystem.Bll;
+using movieRatingSystem.Common;
 using movieRatingSystem.Model;
 using Mysqlx.Resultset;
 
@@ -76,8 +78,6 @@ namespace movieRatingSystem.UI
             {
                 // 获取修改后的值
                 UserModel updatedUserModel = new UserModel();
-                // userModel.
-
                 // 获取 UserID
                 int userID = (int)UserDataGridView.Rows[e.RowIndex].Cells[0].Value;
                 // 代码可以简洁些，但是写完后就不想改了
@@ -86,20 +86,44 @@ namespace movieRatingSystem.UI
                 updatedUserModel.Email = (string)UserDataGridView.Rows[e.RowIndex].Cells["Email"].Value;
                 updatedUserModel.Status = (string)UserDataGridView.Rows[e.RowIndex].Cells["Status"].Value;
                 // 在这里添加更新数据库的代码，将 newValue 更新到数据库中对应的 UserID 记录
-                if (userBll.updatedUserByUserID(userID, updatedUserModel) == 1)
+                if (userBll.updatedUserByUserID(userID, updatedUserModel) != 1)
                 {
-                    MessageBox.Show("更新成功！");
-                }
-                else
-                {
-                    MessageBox.Show("更新失败！");
+                    MessageBox.Show("更新用户信息失败！");
                 }
             }
         }
 
         private void MovieDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("movie change");
+            if (e.ColumnIndex == 0)
+            {
+                MessageBox.Show("不能更新movieId!");
+                reload();
+            }
+
+            if (e.ColumnIndex == 6)
+            {
+                MessageBox.Show("电影平均评分不能更改");
+                reload();
+            }
+
+            if (e.RowIndex >= 0 && e.ColumnIndex > 0)
+            {
+                // 获取修改后的值
+                MovieModel updateMovieModel = new MovieModel();
+                int movieID = (int)MovieDataGridView.Rows[e.RowIndex].Cells[0].Value;
+                updateMovieModel.MovieID = movieID;
+                updateMovieModel.Title = (string)MovieDataGridView.Rows[e.RowIndex].Cells["Title"].Value;
+                updateMovieModel.Genre = (string)MovieDataGridView.Rows[e.RowIndex].Cells["Genre"].Value;
+                updateMovieModel.ReleaseYear = (int)MovieDataGridView.Rows[e.RowIndex].Cells["ReleaseYear"].Value;
+                updateMovieModel.Director = (string)MovieDataGridView.Rows[e.RowIndex].Cells["Director"].Value;
+                updateMovieModel.Description = (string)MovieDataGridView.Rows[e.RowIndex].Cells["Description"].Value;
+                // 在这里添加更新数据库的代码，将 newValue 更新到数据库中对应的 UserID 记录
+                if (movieBll.updatedMovieByMovieID(movieID, updateMovieModel) != 1)
+                {
+                    MessageBox.Show("更新电影信息失败！");
+                }
+            }
         }
 
         private void reload()
@@ -111,5 +135,13 @@ namespace movieRatingSystem.UI
             Close();
         }
 
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            GlobalData.UserId = -1;
+            LoginForm loginForm = new LoginForm();
+            loginForm.StartPosition = FormStartPosition.CenterScreen;
+            loginForm.ShowDialog();
+        }
     }
 }

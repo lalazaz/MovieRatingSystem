@@ -87,5 +87,25 @@ public class MovieDal
 
         return res;
     }
-    
+
+    public int updatedUserByUserID(int movieId, MovieModel updateMovieModel)
+    {
+        string updateSql = "update movies SET " +
+                           "Title = @Title, " +
+                           "Genre = @Genre, " +
+                           "ReleaseYear = @ReleaseYear, " +
+                           "Director = @Director, " +
+                           "Description = @Description " +
+                           "where movieID = @movieID";
+        MySqlParameter[] updateParameters =
+        {
+            new MySqlParameter("Title", MySqlDbType.VarChar) { Value = updateMovieModel.Title },
+            new MySqlParameter("Genre", MySqlDbType.VarChar) { Value = updateMovieModel.Genre },
+            new MySqlParameter("ReleaseYear", MySqlDbType.Int32) { Value = updateMovieModel.ReleaseYear },
+            new MySqlParameter("Director", MySqlDbType.VarChar) { Value = updateMovieModel.Director },
+            new MySqlParameter("Description", MySqlDbType.VarChar) { Value = updateMovieModel.Description },
+            new MySqlParameter("movieID", MySqlDbType.Int32) { Value = movieId }
+        };
+        return MyMySqlHelper.ExecuteNonQuery(updateSql, updateParameters);
+    }
 }

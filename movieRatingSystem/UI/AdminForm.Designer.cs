@@ -34,6 +34,7 @@
             UserDataGridView = new DataGridView();
             MovieDataGridView = new DataGridView();
             splitContainer1 = new SplitContainer();
+            ExitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MovieDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -93,11 +94,22 @@
             splitContainer1.SplitterDistance = 528;
             splitContainer1.TabIndex = 6;
             // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(1218, 122);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(115, 29);
+            ExitButton.TabIndex = 7;
+            ExitButton.Text = "退出";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1399, 400);
+            ClientSize = new Size(1399, 590);
+            Controls.Add(ExitButton);
             Controls.Add(splitContainer1);
             Controls.Add(AddMovieButton);
             Name = "AdminForm";
@@ -118,5 +130,6 @@
         private DataGridView UserDataGridView;
         private DataGridView MovieDataGridView;
         private SplitContainer splitContainer1;
+        private Button ExitButton;
     }
 }

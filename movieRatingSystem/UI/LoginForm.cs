@@ -53,16 +53,16 @@ namespace movieRatingSystem
                 // 管理员登录和普通用户登录
                 if ("admin".Equals(inputName))
                 {
+                    Hide();
                     AdminForm adminForm = new AdminForm();
                     adminForm.Size = new Size(1500, 800);
                     adminForm.ShowDialog();
-                    Close();
                 }
                 else
                 {
+                    Hide();
                     MainForm mainForm = new MainForm();
                     mainForm.ShowDialog();
-                    Close();
                 }
             }
             else
