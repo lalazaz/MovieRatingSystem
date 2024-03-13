@@ -9,7 +9,12 @@ namespace movieRatingSystem.UI
     public partial class AdminForm : Form
     {
         private MovieBll movieBll;
+
         private UserBll userBll;
+
+        // 用来控制随机添加电影的进度显示
+        private Task _task;
+        private int _movieNumber = 0;
 
         public AdminForm()
         {
@@ -51,15 +56,51 @@ namespace movieRatingSystem.UI
 
         private void AddMovieButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("开始自动添加电影！");
             timer_1s.Enabled = true;
         }
 
-        private void timer_1s_Tick(object sender, EventArgs e)
+        private void StopAddMovieButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("时间度过一秒定时器！");
+            timer_1s.Enabled = false;
         }
 
+        // todo 还剩下的问题：
+        // 1.自动添加进度条可以优化
+        // 2.添加电影后自动将电影放到gridview表单
+        // 3.添加完电影后显示完毕
+        // 4.admin 启动后会根据movieid查找电影平均分，那里逻辑有点问题，查不到就报错，应当设置为不报错。
+        private void timer_1s_Tick(object sender, EventArgs e)
+        {
+            AddMovieProgressBar.Style = ProgressBarStyle.Marquee;
+            int effected = movieBll.insertRandomMovie();
+            if (effected != 1)
+            {
+                MessageBox.Show("随机新增电影信息失败，已关闭功能。");
+                reload();
+            }
+
+            UpdateProgress(_movieNumber++);
+            AddMovieProgressBar.Style = ProgressBarStyle.Continuous;
+        }
+
+
+        private void UpdateProgress(int value)
+        {
+            if (value == 20)
+            {
+                timer_1s.Enabled = false;
+                _movieNumber = 0;
+            }
+
+            if (AddMovieProgressBar.InvokeRequired)
+            {
+                AddMovieProgressBar.BeginInvoke((MethodInvoker)(() => AddMovieProgressBar.Value = value));
+            }
+            else
+            {
+                AddMovieProgressBar.Value = value;
+            }
+        }
 
         private void AdminForm_Load(object sender, EventArgs e)
         {

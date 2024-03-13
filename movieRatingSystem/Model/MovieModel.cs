@@ -37,4 +37,13 @@ public class MovieModel
         Director = director;
         Description = description;
     }
+
+    public MovieModel(string title, string genre, int releaseYear, string director, string description)
+    {
+        Title = title;
+        Genre = genre;
+        ReleaseYear = releaseYear;
+        Director = director;
+        Description = description;
+    }
 }

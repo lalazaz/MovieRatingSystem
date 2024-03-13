@@ -35,6 +35,8 @@
             MovieDataGridView = new DataGridView();
             splitContainer1 = new SplitContainer();
             ExitButton = new Button();
+            StopAddMovieButton = new Button();
+            AddMovieProgressBar = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MovieDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -49,7 +51,7 @@
             AddMovieButton.Name = "AddMovieButton";
             AddMovieButton.Size = new Size(115, 36);
             AddMovieButton.TabIndex = 3;
-            AddMovieButton.Text = "自动添加电影";
+            AddMovieButton.Text = "自动20条添加电影";
             AddMovieButton.UseVisualStyleBackColor = true;
             AddMovieButton.Click += AddMovieButton_Click;
             // 
@@ -96,7 +98,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(1218, 122);
+            ExitButton.Location = new Point(1218, 368);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(115, 29);
             ExitButton.TabIndex = 7;
@@ -104,11 +106,31 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
+            // StopAddMovieButton
+            // 
+            StopAddMovieButton.Location = new Point(1218, 112);
+            StopAddMovieButton.Name = "StopAddMovieButton";
+            StopAddMovieButton.Size = new Size(115, 29);
+            StopAddMovieButton.TabIndex = 8;
+            StopAddMovieButton.Text = "停止添加电影";
+            StopAddMovieButton.UseVisualStyleBackColor = true;
+            StopAddMovieButton.Click += StopAddMovieButton_Click;
+            // 
+            // AddMovieProgressBar
+            // 
+            AddMovieProgressBar.Location = new Point(1218, 194);
+            AddMovieProgressBar.Maximum = 20;
+            AddMovieProgressBar.Name = "AddMovieProgressBar";
+            AddMovieProgressBar.Size = new Size(125, 29);
+            AddMovieProgressBar.TabIndex = 9;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1399, 590);
+            Controls.Add(AddMovieProgressBar);
+            Controls.Add(StopAddMovieButton);
             Controls.Add(ExitButton);
             Controls.Add(splitContainer1);
             Controls.Add(AddMovieButton);
@@ -131,5 +153,7 @@
         private DataGridView MovieDataGridView;
         private SplitContainer splitContainer1;
         private Button ExitButton;
+        private Button StopAddMovieButton;
+        private ProgressBar AddMovieProgressBar;
     }
 }

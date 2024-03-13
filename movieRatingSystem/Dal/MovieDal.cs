@@ -108,4 +108,19 @@ public class MovieDal
         };
         return MyMySqlHelper.ExecuteNonQuery(updateSql, updateParameters);
     }
+
+    public int insertRandomMovie(MovieModel randomMovieModel)
+    {
+        string insertSql = "INSERT INTO movies (Title, Genre, ReleaseYear, Director, Description) " +
+                           "VALUES (@Title, @Genre, @ReleaseYear, @Director, @Description)";
+        MySqlParameter[] insertParameters =
+        {
+            new MySqlParameter("Title", MySqlDbType.VarChar) { Value = randomMovieModel.Title },
+            new MySqlParameter("Genre", MySqlDbType.VarChar) { Value = randomMovieModel.Genre },
+            new MySqlParameter("ReleaseYear", MySqlDbType.Int32) { Value = randomMovieModel.ReleaseYear },
+            new MySqlParameter("Director", MySqlDbType.VarChar) { Value = randomMovieModel.Director },
+            new MySqlParameter("Description", MySqlDbType.VarChar) { Value = randomMovieModel.Description }
+        };
+        return MyMySqlHelper.ExecuteNonQuery(insertSql, insertParameters);
+    }
 }
