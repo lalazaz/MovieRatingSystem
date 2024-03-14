@@ -15,9 +15,15 @@ public class RatingDal
         MySqlParameter parameter = new MySqlParameter("@MovieID", MySqlDbType.Int32);
         parameter.Value = movieID;
         DataTable executeQuery = MyMySqlHelper.ExecuteQuery(getAvgRatingSql, parameter);
+        // MessageBox.Show(executeQuery.Rows[0]["AvgRating"].GetType().ToString());
+        // 避免没有查出平均分的报错
+        res = 0;
         if (executeQuery.Rows.Count > 0)
         {
-            res = (decimal)executeQuery.Rows[0]["AvgRating"];
+            if (!executeQuery.Rows[0]["AvgRating"].GetType().ToString().Equals("System.DBNull"))
+            {
+                res = (decimal)executeQuery.Rows[0]["AvgRating"];
+            }
         }
 
         return res;
