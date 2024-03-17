@@ -73,6 +73,7 @@ partial class AboutMeForm
         // 
         UserInfoRichTextBox.Location = new Point(540, 88);
         UserInfoRichTextBox.Name = "UserInfoRichTextBox";
+        UserInfoRichTextBox.ReadOnly = true;
         UserInfoRichTextBox.Size = new Size(216, 268);
         UserInfoRichTextBox.TabIndex = 3;
         UserInfoRichTextBox.Text = "";
