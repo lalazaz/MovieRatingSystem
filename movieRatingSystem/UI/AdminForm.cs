@@ -104,8 +104,6 @@ namespace movieRatingSystem.UI
         
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            // 加载头像avatar todo
-            // 修改数据库，在users中增加头像链接地址字段，用户点击关于我页面后自动加载头像，提供更改头像等功能，判断大小，自动压缩等
         }
 
         private void UserDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)

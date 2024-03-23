@@ -123,6 +123,7 @@ partial class AboutMeForm
         Controls.Add(label1);
         Name = "AboutMeForm";
         Text = "AboutMe";
+        Load += AboutMeForm_Load;
         ((ISupportInitialize)RateMovieDataGridView).EndInit();
         ((ISupportInitialize)avatarPictureBox).EndInit();
         ResumeLayout(false);
