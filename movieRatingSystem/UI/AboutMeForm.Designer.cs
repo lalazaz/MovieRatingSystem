@@ -36,7 +36,10 @@ partial class AboutMeForm
         label2 = new Label();
         UserInfoRichTextBox = new RichTextBox();
         returnPre = new Button();
+        ExportMovieNameButton = new Button();
+        avatarPictureBox = new PictureBox();
         ((ISupportInitialize)RateMovieDataGridView).BeginInit();
+        ((ISupportInitialize)avatarPictureBox).BeginInit();
         SuspendLayout();
         // 
         // label1
@@ -88,11 +91,31 @@ partial class AboutMeForm
         returnPre.UseVisualStyleBackColor = true;
         returnPre.Click += returnPre_Click;
         // 
+        // ExportMovieNameButton
+        // 
+        ExportMovieNameButton.Location = new Point(294, 409);
+        ExportMovieNameButton.Name = "ExportMovieNameButton";
+        ExportMovieNameButton.Size = new Size(155, 29);
+        ExportMovieNameButton.TabIndex = 5;
+        ExportMovieNameButton.Text = "导出电影名称列表";
+        ExportMovieNameButton.UseVisualStyleBackColor = true;
+        ExportMovieNameButton.Click += ExportMovieNameButton_Click;
+        // 
+        // avatarPictureBox
+        // 
+        avatarPictureBox.Location = new Point(663, 20);
+        avatarPictureBox.Name = "avatarPictureBox";
+        avatarPictureBox.Size = new Size(93, 62);
+        avatarPictureBox.TabIndex = 6;
+        avatarPictureBox.TabStop = false;
+        // 
         // AboutMeForm
         // 
         AutoScaleDimensions = new SizeF(9F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(avatarPictureBox);
+        Controls.Add(ExportMovieNameButton);
         Controls.Add(returnPre);
         Controls.Add(UserInfoRichTextBox);
         Controls.Add(label2);
@@ -101,6 +124,7 @@ partial class AboutMeForm
         Name = "AboutMeForm";
         Text = "AboutMe";
         ((ISupportInitialize)RateMovieDataGridView).EndInit();
+        ((ISupportInitialize)avatarPictureBox).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -112,4 +136,6 @@ partial class AboutMeForm
     private Label label2;
     private RichTextBox UserInfoRichTextBox;
     private Button returnPre;
+    private Button ExportMovieNameButton;
+    private PictureBox avatarPictureBox;
 }

@@ -37,6 +37,8 @@
             ExitButton = new Button();
             StopAddMovieButton = new Button();
             AddMovieProgressBar = new ProgressBar();
+            ExportMovieButton = new Button();
+            ExportPeopleInfoButton = new Button();
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MovieDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -98,7 +100,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(1218, 368);
+            ExitButton.Location = new Point(1218, 441);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(115, 29);
             ExitButton.TabIndex = 7;
@@ -124,11 +126,33 @@
             AddMovieProgressBar.Size = new Size(125, 29);
             AddMovieProgressBar.TabIndex = 9;
             // 
+            // ExportMovieButton
+            // 
+            ExportMovieButton.Location = new Point(1218, 333);
+            ExportMovieButton.Name = "ExportMovieButton";
+            ExportMovieButton.Size = new Size(125, 29);
+            ExportMovieButton.TabIndex = 10;
+            ExportMovieButton.Text = "导出电影信息";
+            ExportMovieButton.UseVisualStyleBackColor = true;
+            ExportMovieButton.Click += ExportMovieButton_Click;
+            // 
+            // ExportPeopleInfoButton
+            // 
+            ExportPeopleInfoButton.Location = new Point(1217, 391);
+            ExportPeopleInfoButton.Name = "ExportPeopleInfoButton";
+            ExportPeopleInfoButton.Size = new Size(126, 29);
+            ExportPeopleInfoButton.TabIndex = 11;
+            ExportPeopleInfoButton.Text = "导出人员信息";
+            ExportPeopleInfoButton.UseVisualStyleBackColor = true;
+            ExportPeopleInfoButton.Click += ExportPeopleInfoButton_Click;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1399, 590);
+            Controls.Add(ExportPeopleInfoButton);
+            Controls.Add(ExportMovieButton);
             Controls.Add(AddMovieProgressBar);
             Controls.Add(StopAddMovieButton);
             Controls.Add(ExitButton);
@@ -155,5 +179,7 @@
         private Button ExitButton;
         private Button StopAddMovieButton;
         private ProgressBar AddMovieProgressBar;
+        private Button ExportMovieButton;
+        private Button ExportPeopleInfoButton;
     }
 }
