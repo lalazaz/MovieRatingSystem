@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Drawing.Imaging;
+using System.Text.RegularExpressions;
 using movieRatingSystem.Bll;
 using movieRatingSystem.Common;
 using movieRatingSystem.Model;
@@ -14,6 +15,11 @@ public partial class AboutMeForm : Form
     //默认头像图片存放地址 这里的winform写错了。。
     private string defaultAvatarPath = @"D:\\Code\\winfrom\\movieRatingSystem\\avatar_files";
 
+    // 引用头像图片的流
+    private FileStream avatarFileStream;
+
+    // 头像图片的阈值
+    private long maxFileSizeInBytes = 1024 * 1024;
 
     public AboutMeForm()
     {
@@ -141,7 +147,11 @@ public partial class AboutMeForm : Form
         //再判断一下吧
         if (File.Exists(targetFilePath))
         {
-            Image originalImage = Image.FromFile(targetFilePath);
+            avatarFileStream = new FileStream(targetFilePath, FileMode.Open, FileAccess.Read);
+
+            // Image originalImage = Image.FromFile(targetFilePath);
+            // 使用流中读取，后面释放流就可以释放缓存
+            Image originalImage = Image.FromStream(avatarFileStream);
             avatarPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             avatarPictureBox.Image = ResizeImage(originalImage, avatarPictureBox.Size);
         }
@@ -157,5 +167,61 @@ public partial class AboutMeForm : Form
         }
 
         return newImage;
+    }
+
+    private void avatarPictureBox_Click(object sender, EventArgs e)
+    {
+        // 打开文件对话框，选择图片文件
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp)|*.jpg;*.jpeg;*.png;*.bmp|All files (*.*)|*.*";
+        try
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // 加载选定的图片文件
+                string imagePath = openFileDialog.FileName;
+                Image originalImage = Image.FromFile(imagePath);
+                // 将上传的图片放到文件夹中，如果已经存在则删除文件夹的文件，使用这个
+                reloadPicture(originalImage);
+                // 将图片调整为适应 PictureBox 控件大小
+                avatarPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                avatarPictureBox.Image = ResizeImage(originalImage, avatarPictureBox.Size);
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show("出错了" + exception);
+        }
+    }
+
+    // 更换头像，如果使用默认头像则将新上传头像放到文件夹中，如果原来已经有，则将原来已经有的使用userid+时间戳放到delete中，再存入现在的
+    private void reloadPicture(Image inputImage)
+    {
+        if (!File.Exists(defaultAvatarPath + "\\" + GlobalData.UserId + ".png"))
+        {
+            inputImage.Save(defaultAvatarPath + "\\" + GlobalData.UserId + ".png",
+                ImageFormat.Png);
+        }
+        else
+        {
+            if (!Directory.Exists(defaultAvatarPath + "\\delete"))
+            {
+                Directory.CreateDirectory(defaultAvatarPath + "\\delete");
+            }
+
+            File.Copy(defaultAvatarPath + "\\" + GlobalData.UserId + ".png",
+                defaultAvatarPath + "\\delete" + "\\" + GlobalData.UserId + "_" +
+                DateTimeOffset.UtcNow.ToUnixTimeSeconds() + ".png");
+            ResizeImage(Image.FromFile(defaultAvatarPath + "\\default.png"), avatarPictureBox.Size);
+
+            //使用原来图片的引用
+            avatarFileStream.Close();
+            avatarFileStream.Dispose();
+
+            File.Delete(defaultAvatarPath + "\\" + GlobalData.UserId + ".png");
+
+            // todo 这里图片超过大小进行压缩
+            inputImage.Save(defaultAvatarPath + "\\" + GlobalData.UserId + ".png", ImageFormat.Png);
+        }
     }
 }

@@ -108,6 +108,7 @@ partial class AboutMeForm
         avatarPictureBox.Size = new Size(81, 70);
         avatarPictureBox.TabIndex = 6;
         avatarPictureBox.TabStop = false;
+        avatarPictureBox.Click += avatarPictureBox_Click;
         // 
         // AboutMeForm
         // 
