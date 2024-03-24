@@ -66,7 +66,7 @@ partial class AboutMeForm
         // label2
         // 
         label2.AutoSize = true;
-        label2.Location = new Point(587, 53);
+        label2.Location = new Point(429, 47);
         label2.Name = "label2";
         label2.Size = new Size(69, 20);
         label2.TabIndex = 2;
@@ -74,7 +74,7 @@ partial class AboutMeForm
         // 
         // UserInfoRichTextBox
         // 
-        UserInfoRichTextBox.Location = new Point(540, 88);
+        UserInfoRichTextBox.Location = new Point(531, 88);
         UserInfoRichTextBox.Name = "UserInfoRichTextBox";
         UserInfoRichTextBox.ReadOnly = true;
         UserInfoRichTextBox.Size = new Size(216, 268);
@@ -103,9 +103,9 @@ partial class AboutMeForm
         // 
         // avatarPictureBox
         // 
-        avatarPictureBox.Location = new Point(663, 20);
+        avatarPictureBox.Location = new Point(583, 12);
         avatarPictureBox.Name = "avatarPictureBox";
-        avatarPictureBox.Size = new Size(93, 62);
+        avatarPictureBox.Size = new Size(81, 70);
         avatarPictureBox.TabIndex = 6;
         avatarPictureBox.TabStop = false;
         // 
@@ -113,7 +113,7 @@ partial class AboutMeForm
         // 
         AutoScaleDimensions = new SizeF(9F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        ClientSize = new Size(1036, 450);
         Controls.Add(avatarPictureBox);
         Controls.Add(ExportMovieNameButton);
         Controls.Add(returnPre);

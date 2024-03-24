@@ -11,6 +11,10 @@ public partial class AboutMeForm : Form
 
     private RatingBll ratingBll;
 
+    //默认头像图片存放地址 这里的winform写错了。。
+    private string defaultAvatarPath = @"D:\\Code\\winfrom\\movieRatingSystem\\avatar_files";
+
+
     public AboutMeForm()
     {
         userBll = new UserBll();
@@ -126,12 +130,32 @@ public partial class AboutMeForm : Form
     // todo 
     private void ExportMovieNameButton_Click(object sender, EventArgs e)
     {
-
     }
 
     private void AboutMeForm_Load(object sender, EventArgs e)
     {
-        // 加载头像avatar todo
-        // 修改数据库，在users中增加头像链接地址字段，用户点击关于我页面后自动加载头像，提供更改头像等功能，判断大小，自动压缩等
+        string defaultFilePath = defaultAvatarPath + "\\default.png";
+        string myAvatarPath = defaultAvatarPath + "\\" + GlobalData.UserId + ".png";
+
+        string targetFilePath = File.Exists(myAvatarPath) ? myAvatarPath : defaultFilePath;
+        //再判断一下吧
+        if (File.Exists(targetFilePath))
+        {
+            Image originalImage = Image.FromFile(targetFilePath);
+            avatarPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            avatarPictureBox.Image = ResizeImage(originalImage, avatarPictureBox.Size);
+        }
+    }
+
+    // 调整头像图片显示大小的方法
+    private Image ResizeImage(Image image, Size newSize)
+    {
+        Bitmap newImage = new Bitmap(newSize.Width, newSize.Height);
+        using (Graphics g = Graphics.FromImage(newImage))
+        {
+            g.DrawImage(image, new Rectangle(Point.Empty, newSize));
+        }
+
+        return newImage;
     }
 }
