@@ -1,4 +1,5 @@
-﻿/movieRatingSystem/bin
+﻿/avatar_files
+/movieRatingSystem/bin
 .vs/
 /movieRatingSystem/obj/Debug/net8.0-windows/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
 /.vs/movieRatingSystem/FileContentIndex/4b64d79f-f8a4-4412-80e8-4d11ab45ed6b.vsidx
@@ -37,3 +38,4 @@
 /movieRatingSystem/obj/project.packagespec.json
 /movieRatingSystem/obj/rider.project.model.nuget.info
 /movieRatingSystem/obj/rider.project.restore.info
+
