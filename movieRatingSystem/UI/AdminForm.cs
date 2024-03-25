@@ -64,11 +64,7 @@ namespace movieRatingSystem.UI
             timer_1s.Enabled = false;
         }
 
-        // todo 还剩下的问题：
-        // 1.自动添加进度条可以优化
-        // 2.添加电影后自动将电影放到gridview表单
-        // 3.添加完电影后显示完毕
-        // 4.admin 启动后会根据movieid查找电影平均分，那里逻辑有点问题，查不到就报错，应当设置为不报错。
+
         private void timer_1s_Tick(object sender, EventArgs e)
         {
             AddMovieProgressBar.Style = ProgressBarStyle.Marquee;
@@ -101,7 +97,7 @@ namespace movieRatingSystem.UI
                 AddMovieProgressBar.Value = value;
             }
         }
-        
+
         private void AdminForm_Load(object sender, EventArgs e)
         {
         }
@@ -185,16 +181,14 @@ namespace movieRatingSystem.UI
             loginForm.ShowDialog();
         }
 
-        // todo 
         private void ExportMovieButton_Click(object sender, EventArgs e)
         {
-
+            ExcelExport.ExportToExcel(MovieDataGridView, "D:\\Code\\" + MovieDataGridView.Name + ".xlsx");
         }
-        // todo
+
         private void ExportPeopleInfoButton_Click(object sender, EventArgs e)
         {
-
+            ExcelExport.ExportToExcel(UserDataGridView, "D:\\Code\\" + UserDataGridView.Name + ".xlsx");
         }
-
     }
 }
